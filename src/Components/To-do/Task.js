@@ -1,6 +1,7 @@
 import React from 'react';
 import update from '../../assets/contract.png'
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Task = ({ t, setTask, tasks }) => {
     const { _id, task } = t;
@@ -9,7 +10,7 @@ const Task = ({ t, setTask, tasks }) => {
 
         const objTask = { task };
         // post data to the new server
-        fetch('http://localhost:5000/complete', {
+        fetch('https://upper-chesterfield-58510.herokuapp.com/complete', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -24,7 +25,7 @@ const Task = ({ t, setTask, tasks }) => {
 
 
         // delete task 
-        const url = `http://localhost:5000/task/${id}`;
+        const url = `https://upper-chesterfield-58510.herokuapp.com/task/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -35,6 +36,7 @@ const Task = ({ t, setTask, tasks }) => {
                     setTask(remaining);
                 }
             })
+        toast('Yeah!! You have completed the task')
     }
     return (
         <tr>

@@ -7,6 +7,9 @@ import Tasklist from './Components/To-do/Tasklist';
 import UpdateTask from './Components/To-do/UpdateTask';
 import CalenderDate from './Components/Calender/CalenderDate';
 import Completed from './Components/Completed/Completed';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -22,6 +25,17 @@ function App() {
 
       </Routes>
       <Footer></Footer>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }

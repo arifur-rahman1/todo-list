@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 
 const Home = () => {
@@ -11,7 +12,7 @@ const Home = () => {
             task: list
         }
         console.log(task);
-        const url = `http://localhost:5000/task`;
+        const url = `https://upper-chesterfield-58510.herokuapp.com/task`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -24,6 +25,7 @@ const Home = () => {
                 console.log(result);
             })
         e.target.todo.value = '';
+        toast('Your task has been added to the todo list')
     }
     return (
         <div>

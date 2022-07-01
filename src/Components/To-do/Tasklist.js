@@ -7,7 +7,7 @@ const Tasklist = () => {
 
     const [tasks, setTask] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/task')
+        fetch('https://upper-chesterfield-58510.herokuapp.com/task')
             .then(res => res.json())
             .then(data => setTask(data))
     }, []);

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const UpdateTask = () => {
     const { id } = useParams();
     const [update, setUpdate] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/task/${id}`;
+        const url = `https://upper-chesterfield-58510.herokuapp.com/task/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setUpdate(data))
@@ -18,7 +19,7 @@ const UpdateTask = () => {
         const Updatedtask = {
             task: list
         }
-        const url = `http://localhost:5000/task/${id}`;
+        const url = `https://upper-chesterfield-58510.herokuapp.com/task/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -31,6 +32,7 @@ const UpdateTask = () => {
                 console.log(result);
             })
         e.target.todo.value = '';
+        toast('You just change your task')
     }
 
     return (

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import update from '../../assets/contract.png'
+import { Link } from 'react-router-dom';
 
 const Tasklist = () => {
 
@@ -35,7 +36,8 @@ const Tasklist = () => {
                                 </td>
                                 <td>{t.task}</td>
                                 <td>
-                                    <label class="btn btn-ghost"><span><img src={update} /></span></label>
+                                    <Link to={`/update/${t._id}`} class="btn btn-ghost"><span><img src={update} /></span> </Link>
+
                                 </td>
 
 

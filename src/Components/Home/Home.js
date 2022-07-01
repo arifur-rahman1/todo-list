@@ -35,13 +35,10 @@ const Home = () => {
                     </div>
                     <div>
                         <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-1'>
-                            <label className="label">
-                                <span className="label-text">Discription</span>
 
-                            </label>
-                            <textarea type="text" name='todo' placeholder="Description" class="input input-bordered w-full max-w-xs" />
+                            <textarea type="text" name='todo' placeholder="Your new task" class="input input-bordered w-full max-w-xs" />
 
-                            <input type="submit" value={'submit'} class="btn w-full max-w-xs"
+                            <input type="submit" value={'ADD Task'} class="btn w-full max-w-xs"
                             />
                         </form>
 

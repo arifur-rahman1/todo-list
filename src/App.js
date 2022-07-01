@@ -4,6 +4,7 @@ import Footer from './Components/Home/Footer';
 import Home from './Components/Home/Home';
 import Navbar from './Components/Home/Navbar';
 import Tasklist from './Components/To-do/Tasklist';
+import UpdateTask from './Components/To-do/UpdateTask';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/todo' element={<Tasklist></Tasklist>}></Route>
+        <Route path='/update/:id' element={<UpdateTask></UpdateTask>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

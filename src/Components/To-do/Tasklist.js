@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import update from '../../assets/contract.png'
 import { Link } from 'react-router-dom';
+import Task from './Task';
 
 const Tasklist = () => {
 
@@ -10,6 +11,11 @@ const Tasklist = () => {
             .then(res => res.json())
             .then(data => setTask(data))
     }, []);
+
+    // const completeTask = () => {
+
+    // }
+
     return (
 
         <div>
@@ -20,7 +26,7 @@ const Tasklist = () => {
                         <tr>
                             <th>
                             </th>
-                            <th>Name</th>
+                            <th>Tasks</th>
                             <th>Update</th>
 
                         </tr>
@@ -28,20 +34,27 @@ const Tasklist = () => {
                     <tbody>
 
                         {
-                            tasks.map(t => <tr>
-                                <td>
-                                    <label>
-                                        <input type="checkbox" class="checkbox" />
-                                    </label>
-                                </td>
-                                <td>{t.task}</td>
-                                <td>
-                                    <Link to={`/update/${t._id}`} class="btn btn-ghost"><span><img src={update} /></span> </Link>
+                            tasks.map(t => <Task
+                                key={t._id}
+                                t={t}
+                                tasks={tasks}
+                                setTask={setTask}
+                            ></Task>
+                                // <tr>
+                                //     <td>
+                                //         <label>
+                                //             <input onClick={completeTask(t._id)} type="checkbox" class="checkbox" />
+                                //         </label>
+                                //     </td>
+                                //     <td>{t.task}</td>
+                                //     <td>
+                                //         <Link to={`/update/${t._id}`} class="btn btn-ghost"><span><img src={update} /></span> </Link>
 
-                                </td>
+                                //     </td>
 
 
-                            </tr>)
+                                // </tr>
+                            )
                         }
 
                     </tbody>

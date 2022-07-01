@@ -6,6 +6,7 @@ import Navbar from './Components/Home/Navbar';
 import Tasklist from './Components/To-do/Tasklist';
 import UpdateTask from './Components/To-do/UpdateTask';
 import CalenderDate from './Components/Calender/CalenderDate';
+import Completed from './Components/Completed/Completed';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path='/todo' element={<Tasklist></Tasklist>}></Route>
         <Route path='/calender' element={<CalenderDate></CalenderDate>}></Route>
         <Route path='/update/:id' element={<UpdateTask></UpdateTask>}></Route>
+        <Route path='/completed' element={<Completed></Completed>}></Route>
+
       </Routes>
       <Footer></Footer>
     </div>

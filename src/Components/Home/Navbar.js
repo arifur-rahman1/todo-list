@@ -20,7 +20,7 @@ const Navbar = () => {
                             {menuItem}
                         </ul>
                     </div>
-                    <Link to={'/'} class="btn btn-ghost normal-case text-xl">To-Do</Link>
+                    <Link to={'/'} class="btn btn-ghost normal-case text-xl">To-Do List</Link>
                 </div>
                 <div class="navbar-end hidden lg:flex">
                     <ul class="menu menu-horizontal p-0">
